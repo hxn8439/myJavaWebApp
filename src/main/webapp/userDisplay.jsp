@@ -5,9 +5,7 @@
 javax.persistence.EntityManagerFactory,
 javax.persistence.EntityTransaction,
 javax.persistence.Persistence,
-javax.persistence.Query,
-com.hcl.javaservletjsp.User2,
-java.util.List" %>
+javax.persistence.Query,com.hcl.javaservletjsp.UserPojo,java.util.List" %>
 
 <!DOCTYPE html>
 <html>
@@ -30,14 +28,14 @@ try {
 	
 	transaction.begin();
 	
-	entityManager.persist(new User2( "krishna", "k@p.com", "sfo"));
-	entityManager.persist(new User2( "kart", "k@k.com", "seattle"));
+	entityManager.persist(new UserPojo( "krishna", "k@p.com", "sfo"));
+	entityManager.persist(new UserPojo( "kart", "k@k.com", "seattle"));
 
 	Query readAll1 = entityManager.createQuery("select s from User2 s");
 
-	List<User2> resultListAll1 = readAll1.getResultList();
+	List<UserPojo> resultListAll1 = readAll1.getResultList();
 
-	for(User2 u: resultListAll1) {
+	for(UserPojo u: resultListAll1) {
 %>
 
 <!--  this is where your HTML block started -->

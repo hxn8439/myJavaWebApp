@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%int a=5; %>
+
 </body>
 </html>

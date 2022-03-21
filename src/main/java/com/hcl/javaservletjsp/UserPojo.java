@@ -11,8 +11,9 @@ import javax.persistence.Table;
 //Class that has just some fields and it has getters and setters operating on it
 //IT HAS NO BUSINESS LOGIC, this is equaliant of struct in c or c++ 
 // and it is also called BEAN in Java
-@Entity//(name = "Use")
-public class User2 {
+@Entity(name = "Users")
+@Table(name = "User")
+public class UserPojo {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,13 +23,13 @@ public class User2 {
 	
 	private String email;
 	
-	private String country;
+	private String location;
 	
-	public User2(String name, String email, String country) {
+	public UserPojo(String name, String email, String country) {
 		//this.id = id;
 		this.name = name;
 		this.email = email;
-		this.country = country;
+		this.location = location;
 	}
 
 	public int getId() {
@@ -50,15 +51,15 @@ public class User2 {
 		this.email = email;
 	}
 	public String getCountry() {
-		return country;
+		return location;
 	}
 	public void setCountry(String country) {
-		this.country = country;
+		this.location = country;
 	}
 	
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", Name=" + name + ", Email=" + email
-				+ ", Country=" + country + "]";
+				+ ", Country=" + location + "]";
 	}
 }
